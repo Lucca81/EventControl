@@ -1,3 +1,16 @@
 spring:
   application:
-    name: eventcontrol
+    name: event-control
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eventcontrol
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  flyway:
+    enabled: true
+    location: classpath:db/migration
