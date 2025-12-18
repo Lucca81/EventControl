@@ -18,7 +18,7 @@ public class ControllerExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
     @ExceptionHandler
-    public ResponseEntity<Map<String, String>> handlerNotFoundEventException(NotFoundEventExeption notFoundException){
+    public ResponseEntity<Map<String, String>> handlerNotFoundEventException(NotFoundEventException notFoundException){
         Map<String, String> response = new HashMap<>();
         response.put("Error", notFoundException.getMessage());
         response.put("Message", "Please insert a existing hashId for your event try again");

@@ -3,7 +3,6 @@ package com.br.management.eventcontrol.core.usecases;
 import com.br.management.eventcontrol.core.domain.Event;
 import com.br.management.eventcontrol.core.gateway.EventGateway;
 import com.br.management.eventcontrol.infrastructure.exception.EventExceptionIdentifierNotFound;
-import com.br.management.eventcontrol.infrastructure.exception.NotFoundEventExeption;
 
 public class FilterIdentifierEventUsecaseImpl implements FilterIdentifierEventUsecase{
     private final EventGateway eventGateway;

@@ -2,9 +2,7 @@ package com.br.management.eventcontrol.core.usecases;
 
 import com.br.management.eventcontrol.core.domain.Event;
 import com.br.management.eventcontrol.core.gateway.EventGateway;
-import com.br.management.eventcontrol.infrastructure.exception.NotFoundEventExeption;
-
-import java.util.Optional;
+import com.br.management.eventcontrol.infrastructure.exception.NotFoundEventException;
 
 public class FindEventByIdUsecaseImpl  implements  FindEventByIdUsecase{
 
@@ -17,6 +15,6 @@ public class FindEventByIdUsecaseImpl  implements  FindEventByIdUsecase{
     @Override
     public Event execute(Long id) {
         return eventGateway.findById(id)
-                .orElseThrow(()-> new NotFoundEventExeption("Event with id: " + id + " does not exist"));
+                .orElseThrow(()-> new NotFoundEventException("Event with id: " + id + " does not exist"));
     }
 }
