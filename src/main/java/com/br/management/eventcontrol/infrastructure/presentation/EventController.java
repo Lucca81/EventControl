@@ -32,7 +32,6 @@ public class EventController {
     @PostMapping
     public ResponseEntity<Map<String, Object>> createEvent(@RequestBody EventRequestDto eventRequestDto) {
         Event newEvent = createEvent.execute(eventDtoMapper.toDomain(eventRequestDto));
-        eventRepositoryGateway.createEvent(newEvent);
         Map<String, Object> response = new HashMap<>();
         response.put("Message: ", "Event created successfully ");
         response.put("Data List: ", eventDtoMapper.toResponse(newEvent));
