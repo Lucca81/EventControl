@@ -23,12 +23,12 @@ public class EventDtoMapper {
     }
     public Event toDomain(EventRequestDto requestDto){
         return new Event(
-                requestDto.id(),
+                null,
                 requestDto.name(),
                 requestDto.description(),
                 requestDto.dateStart(),
                 requestDto.dateEnd(),
-                requestDto.identifier(),
+                null,
                 requestDto.eventLocal(),
                 requestDto.organizer(),
                 requestDto.capacity(),

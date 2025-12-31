@@ -4,6 +4,8 @@ import com.br.management.eventcontrol.core.domain.Event;
 import com.br.management.eventcontrol.core.gateway.EventGateway;
 import com.br.management.eventcontrol.infrastructure.exception.DuplicateEventException;
 
+import java.util.UUID;
+
 public class CreateEventUsecaseImpl implements CreateEventUsecase{
 
     private final EventGateway eventGateway;
@@ -14,8 +16,20 @@ public class CreateEventUsecaseImpl implements CreateEventUsecase{
 
     @Override
     public Event execute(Event event) {
-        if (eventGateway.identifierExisting(event.identifier()))
-            throw new DuplicateEventException("The identifier number: " + event.identifier() + "Is already in use for another event");
-        return eventGateway.createEvent(event);
+        String uuid = UUID.randomUUID().toString();
+
+        Event eventWithIdentifier = new Event(
+                event.id(),
+                event.name(),
+                event.description(),
+                event.dateStart(),
+                event.dateEnd(),
+                uuid,
+                event.eventLocal(),
+                event.organizer(),
+                event.capacity(),
+                event.type()
+        );
+        return eventGateway.createEvent(eventWithIdentifier);
     }
 }
