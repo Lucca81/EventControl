@@ -9,7 +9,7 @@ O principal diferencial deste projeto é a implementação da **Clean Architectu
 - **Java 21**
 - **Spring Boot 3**
 - **Spring Data JPA**
-- **PostgreSQL** (ou H2 Database)
+- **PostgreSQL** 
 - **Docker**
 - **Lombok**
 - **Maven**
